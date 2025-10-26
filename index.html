@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainBolt Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+  <body>
+    <header class="top-nav">
+      <div class="brand">⚡ BrainBolt</div>
+      <button id="themeToggle" class="btn small">Switch Theme</button>
+    </header>
+
+    <main class="app">
+      <section id="settingsScreen" class="card">
+        <h2>Ready to challenge your brain?</h2>
+        <div class="row">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="general_knowledge">General Knowledge</option>
+            <option value="science">Science</option>
+            <option value="geography">Geography</option>
+            <option value="history">History</option>
+            <option value="music">Music</option>
+            <option value="films">Films</option>
+            <option value="sport_and_leisure">Sports</option>
+            <option value="arts_and_literature">Arts & Literature</option>
+            <option value="society_and_culture">Society & Culture</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="meta">
+          <div>Questions per round: <strong>10</strong></div>
+          <div>Time per question: <strong>15s</strong></div>
+        </div>
+        <div class="controls">
+          <button id="startBtn" class="btn primary">Start BrainBolt</button>
+        </div>
+        <div class="highscore">
+          <div>High Score: <span id="highScoreValue">0</span> / 10</div>
+        </div>
+      </section>
+
+      <section id="quizScreen" class="card hidden">
+        <div class="quiz-top">
+          <div class="progress">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="timer" id="timerDisplay">15s</div>
+        </div>
+        <h3 id="questionText" class="question">Question text</h3>
+        <div id="answersContainer" class="answers"></div>
+        <div class="row between">
+          <div id="progressText">1 / 10</div>
+          <div>
+            <button id="skipBtn" class="btn">Skip</button>
+            <button id="nextBtn" class="btn primary hidden">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="card hidden">
+        <h2>BrainBolt Round Complete</h2>
+        <p>Your score: <strong id="finalScore">0</strong> / 10</p>
+        <p id="resultMessage" class="muted"></p>
+        <p>High score: <strong id="storedHighScore">0</strong> / 10</p>
+        <div class="controls">
+          <button id="playAgainBtn" class="btn">Play Again</button>
+          <button id="backToSettingsBtn" class="btn">Settings</button>
+        </div>
+      </section>
+    </main>
+
+    <audio
+      id="correctSfx"
+      src="https://cdn.pixabay.com/audio/2021/08/09/audio_3a0dd66c2a.mp3"
+    ></audio>
+    <audio
+      id="wrongSfx"
+      src="https://cdn.pixabay.com/audio/2022/03/15/audio_8204a233db.mp3"
+    ></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
