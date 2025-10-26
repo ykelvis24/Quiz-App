@@ -54,7 +54,8 @@ button:hover {
 }
 
 .card h2,
-.meta {
+.meta,
+.row {
   margin-bottom: 10px;
 }
 .hidden {
